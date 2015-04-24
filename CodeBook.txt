@@ -1,0 +1,22 @@
+                           DATA DICTIONARY FOR GETTING AND CLEANING DATA PROJECT
+                           
+activityLabel
+	Actitivy Type
+		WALKING		                .Walking when data is colleted
+		WALKING_UPSTAIRS 		.Waking upstairs when data is collected
+		WALKING_DOWNSTAIRS      	.Walking downstairs when data is collected
+		SITTING				.Sitting when data is collected
+		STANDING			.Standing when data is collected
+		LAYING				.Laying when data is collected
+subject
+	Data collecting subject
+		1..30				.We have 30 participants in this testing
+feature
+	Data collection features
+		feature name			.The feature name can be referred from "features.txt" file.  
+						 For this course project, the feature name should be a subset 
+						 of that since we only want to get "mean" and "std" related 
+						 features.
+mean
+	Mean value for each feature
+		-1..1				.Normalized mean value for each feature.
