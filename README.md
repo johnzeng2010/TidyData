@@ -22,12 +22,12 @@ The generated tidy data is uploaded to "https://s3.amazonaws.com/coursera-upload
 tidy <- read.table("tidy.txt", header=TRUE)
 
 For your convenience, you can view such data file by doing following:
-
+```
 address <- "https://s3.amazonaws.com/coursera-uploads/user-50f468110614a37410638391/973500/asst-3/3a4c6ae0ea9911e4b252693ad2083e29.txt"
 address <- sub("^https", "http", address)
 data <- read.table(url(address), header = TRUE) 
 View(data)
-
+```
 The format of such tidy data is documented in "CodeBook.txt" file.
 
 Following is the details of how such 5 requirements are implemented in "run_analysis.R":
