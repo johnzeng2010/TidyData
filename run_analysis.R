@@ -8,9 +8,6 @@ subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
 # Requirement 4, Labels the data set with descriptive variable name
 # It is reasonal to use the variable names from the data files except 
 # these which are unavailable. 
-# Since I am using the label names to find columns for mean and std,
-# I do step 4 before 1, 2 & 4
-# Giving variable a label early will also help data merging.
 name <- read.table("UCI HAR Dataset/features.txt")
 label <- read.table("UCI HAR Dataset/activity_labels.txt")
 names(X_train) <- name$V2
@@ -26,7 +23,7 @@ test <- cbind(X_test, y_test, subject_test)
 data <- rbind(train, test)
 
 # Requirement 2: extract only the measurements on the mean and standard deviation.
-# By changing following line a little bit, we can contain other measurement such as meanFreq, etc.
+# By changing following line a little bit, we can contain other measurements such as meanFreq, etc.
 selected_data <- data[,c("activityLabel", "subject", colnames(data)[grep("\\-mean\\(\\)", colnames(data))], colnames(data)[grep("\\-std\\(\\)", colnames(data))])]
 
 # Requirement 3: label activities using descriptive activity names
